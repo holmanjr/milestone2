@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var pgp = require('pg-promise')();
-var db = pgp('postgres://postgres:pass@localhost:5432/scoreboard');
+var db = pgp(process.env.DATABASE_URL);
 
 app.use(express.static(__dirname + '/public'));
 
@@ -73,6 +73,6 @@ app.post('/scoreboard/:id', function(req, res, next){
   });
 });
 
-app.listen(3000, function(){
-  console.log("Application running localhost:3000")
+app.listen(process.env.PORT, function(){
+  console.log("Application running on localhost:3000")
 });
