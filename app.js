@@ -11,15 +11,6 @@ app.set('view engine', 'ejs');
 
 app.set('views', __dirname + '/views');
 
-app.use(session({
-  secret: process.env.COOKIE_SECRET,
-  name: 'userId',
-  resave: true,
-  saveUninitialized: false,
-  secure: true,
-  cookie: { maxAge: 60 * 60 * 1000 } // 30 days
-}));
-
 app.use(bodyParser.urlencoded({ extended: false}))
 
 app.use(bodyParser.json())
