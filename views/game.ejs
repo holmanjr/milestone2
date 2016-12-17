@@ -1,0 +1,8 @@
+<% include partials/header %>
+  <form id="update_score" action="/scoreboard/<%= player.id %>" method="post">
+    <h1>Memory Game</h1><br>
+    <div id="memory_board">
+    </div>
+    <input type="hidden" id="score" name="score">
+  </form>
+<% include partials/footer %>

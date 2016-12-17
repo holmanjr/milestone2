@@ -1,0 +1,20 @@
+<% include partials/header %>
+  <div class="container">
+    <div class="well" id="scoreboard">
+      <h4><a href="/" type="button" class="btn btn-primary btn-block">Home Page</a></h4>
+      <h2><strong>High Scores</strong></h2>
+      <% player.forEach(function(row){ %>
+        <div class="row">
+          <h4>
+            <span id="name">
+              <strong><%= row.name %></strong>
+            </span>
+            <span id="score">
+              <strong><%= row.score%> Failed Attempts</strong>
+            </span>
+          </h4>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+<% include partials/footer %>

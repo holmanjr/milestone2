@@ -1,0 +1,21 @@
+<% include partials/header %>
+  <div class="container">
+    <div class="well">
+      <form action="/user" method="post">
+        <div class="form-group">
+          <h2><strong>Memory Game</strong></h2>
+          <h4>
+            <label>Username</label>
+            <input type="text" name="username"><br><br>
+            <button type="submit" class="btn btn-success btn-block">Create User</a>
+          </h4>
+        </div>
+      </form>
+      <% player.forEach(function(row){ %>
+        <h4>
+          Play as <a href="game/<%= row.id %>"><%= row.name %></a>
+        </h4>
+      <% }) %>
+    </div>
+  </div>
+<% include partials/footer %>
